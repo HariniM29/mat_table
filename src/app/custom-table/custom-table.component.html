@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="table-responsive" id="paymentNew">
+      <div class="table-container" style="height: 400px; overflow-y: auto;">
+        <table id="myTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Description</th>
+              <th>Name</th>
+              <th>Invoice or PI Number</th>
+              <th>Amount</th>
+              <th>Requester</th>
+              <th>Additional Info</th>
+              <th>MDComment</th>
+              <th>Bank Name</th>
+              <th>SAP Number</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let row of PaymentRecords; let i = index">
+              <td *ngFor="let cell of row; let j = index"
+                  (mousedown)="onMouseDownCell($event, i, j)"
+                  (mousemove)="onMouseMoveCell($event, i, j)"
+                  (mouseup)="onMouseUp($event)"
+
+                  [class.selected]="isSelected(i, j)">
+                {{ cell }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="copySelectedValues()">Copy Selected Values</button>

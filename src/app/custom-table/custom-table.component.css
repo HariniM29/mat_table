@@ -1,0 +1,9 @@
+.selected {
+  background-color: rgb(32, 150, 230); /* You can adjust the background color as desired */
+}
+ td{
+  border: 1px solid grey;
+}
+table{
+  padding: 10px 10px 20px ;
+}
